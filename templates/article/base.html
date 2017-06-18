@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'editor/css/style.css' %}"/>
+        <link rel="stylesheet" href="{% static 'editor/css/editormd.css' %}"/>
+    </head>
+    <body>
+        <div class="container">
+            {% include 'article/header.html' %}
+            <div class="col-md-2">
+            {% include 'article/leftslider.html' %}
+            </div>
+            <div class="col-md-10">
+                {% block content %}
+                {% endblock %}
+            </div>
+            {% include "footer.html" %}
+        </div>
+    </body>
+</html>

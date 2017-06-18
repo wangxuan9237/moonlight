@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}user register{% endblock %}
+{% block content %}
+<div class="row text-center">
+    <h1>User register</h1>
+    <form class="form-horizontal" action="." method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{registerform.username.id_for_label}}" class="col-md-5 control-label">Username</label>
+            <div class="col-md-6 text-left">
+                {{ registerform.username }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{registerform.email.id_for_label}}" class="col-md-5 control-label">email</label>
+            <div class="col-md-6 text-left">
+                {{ registerform.email }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{registerform.password.id_for_label}}" class="col-md-5 control-label">password</label>
+            <div class="col-md-6 text-left">
+                {{ registerform.password }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{registerform.password2.id_for_label}}" class="col-md-5 control-label">password2</label>
+            <div class="col-md-6 text-left">
+                {{ registerform.password2 }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{userprofileform.birth.id_for_label}}" class="col-md-5 control-label">birth</label>
+            <div class="col-md-6 text-left">
+                {{ userprofileform.birth }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{userprofileform.phone.id_for_label}}" class="col-md-5 control-label">phone</label>
+            <div class="col-md-6 text-left">
+                {{ userprofileform.phone }}
+            </div>
+        </div>
+        <input type="submit" value="register">
+    </form>
+</div>
+{% endblock %}
+
